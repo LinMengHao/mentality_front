@@ -4,8 +4,8 @@
     <header id="header">
       <section class="container">
         <h1 id="logo">
-          <a href="#" title="MindSchool">
-            <img src="~/assets/img/logo.png" width="100%" alt="MindMentality">
+          <a href="#" title="MandMentality">
+            <img src="~/assets/img/logo3.jpg" width="100%" alt="MandMentality">
           </a>
         </h1>
         <div class="h-r-nsl" style="font-weight: 700;">
@@ -139,9 +139,9 @@
   import "~/assets/css/pages-weixinpay.css"
 
   //引入调用js-cookie
-  // import cookie from 'js-cookie'
-  // // //引入调用login.js文件
-  // import loginApi from '@/api/login'
+  import cookie from 'js-cookie'
+  // //引入调用login.js文件
+  import loginApi from '@/api/login'
   export default {
     data() {
       return {
@@ -157,50 +157,50 @@
       }
     },
     created() {
-      // //获取路径里面token值
-      // this.token = this.$route.query.token
-      // if(this.token) {//判断路径是否有token值
-      //   this.wxLogin()
-      // }
-      //
-      // this.showInfoFromCookie()
+      //获取路径里面token值
+      this.token = this.$route.query.token
+      if(this.token) {//判断路径是否有token值
+        this.wxLogin()
+      }
+
+      this.showInfoFromCookie()
     },
     methods: {
-      // //从cookie中获取用户信息
-      // showInfoFromCookie() {
-      //   //从cookie中获取用户信息
-      //   var userStr = cookie.get("lmh_ucenter")
-      //   //userStr是字符串   需要转换为json对象
-      //   if (userStr) {
-      //     this.loginInfo = JSON.parse(userStr)
-      //   }
-      // },
+      //从cookie中获取用户信息
+      showInfoFromCookie() {
+        //从cookie中获取用户信息
+        var userStr = cookie.get("lmh_ucenter")
+        //userStr是字符串   需要转换为json对象
+        if (userStr) {
+          this.loginInfo = JSON.parse(userStr)
+        }
+      },
 
       //搜索
       search(){
         this.$router.push({path:'/course/'})
       },
 
-      // //退出  cookie清空
-      // logout(){
-      //   cookie.set('lmh_ucenter', "", {domain: 'localhost'})
-      //   cookie.set('lmh_token', "", {domain: 'localhost'})
-      //   //回首页
-      //   window.location.href = "/"
-      // },
+      //退出  cookie清空
+      logout(){
+        cookie.set('lmh_ucenter', "", {domain: 'localhost'})
+        cookie.set('lmh_token', "", {domain: 'localhost'})
+        //回首页
+        window.location.href = "/"
+      },
 
       //微信登录显示的方法
-      // wxLogin() {
-      //   //把token值放到cookie里面
-      //   cookie.set('lmh_token',this.token,{domain: 'localhost'})
-      //   cookie.set('lmh_ucenter','',{domain: 'localhost'})
-      //   //调用接口，根据token值获取用户信息
-      //   loginApi.getLoginMemberInfo()
-      //     .then(response => {
-      //       this.loginInfo = response.data.data.userInfo
-      //       cookie.set('lmh_ucenter',this.loginInfo,{domain: 'localhost'})
-      //     })
-      // },
+      wxLogin() {
+        //把token值放到cookie里面
+        cookie.set('lmh_token',this.token,{domain: 'localhost'})
+        cookie.set('lmh_ucenter','',{domain: 'localhost'})
+        //调用接口，根据token值获取用户信息
+        loginApi.getLoginMemberInfo()
+          .then(response => {
+            this.loginInfo = response.data.data.memberInfo;
+            cookie.set('lmh_ucenter',this.loginInfo,{domain: 'localhost'})
+          })
+      },
     }
   };
 </script>

@@ -1,31 +1,27 @@
 import axios from 'axios'
-//引入调用js-cookie
 import cookie from 'js-cookie'
 import {
   MessageBox,
   Message
 } from 'element-ui'
+const service=axios.create({
+  baseURL:'http://localhost:9003',
+  timeout: 20000
+})
+//创建拦截器 获取token 传递token到cookie中
+service.interceptors.request.use(
+  config => {
+    //判断cookie里面是否有lmh_token数据
+    if (cookie.get('lmh_token')) {
+      //把获取到的token放入cookie
+      config.headers['token'] = cookie.get('lmh_token');
+    }
+    return config
+  },
+  err => {
+    return Promise.reject(err);
+  })
 
-// 创建axios实例
-const service = axios.create({
-  baseURL: 'http://localhost:9003', // api的base_url
-  timeout: 20000 // 请求超时时间
-});
-
-// //创建拦截器 获取token 传递token到cookie中
-// service.interceptors.request.use(
-//   config => {
-//     //判断cookie里面是否有MindSchool_token数据
-//     if (cookie.get('MindSchool_token')) {
-//       //把获取到的token放入cookie
-//       config.headers['token'] = cookie.get('MindSchool_token');
-//     }
-//     return config
-//   },
-//   err => {
-//     return Promise.reject(err);
-//   });
-//
 // // http response 拦截器
 // service.interceptors.response.use(
 //   response => {
@@ -52,5 +48,4 @@ const service = axios.create({
 //   error => {
 //     return Promise.reject(error.response) // 返回接口返回的错误信息
 //   });
-
 export default service
