@@ -17,16 +17,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/layouts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\webStorm\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\GitHub\Mentality\mentality_front\assets\img" />
+      <recent name="E:\GitHub\Mentality\mentality_front\layouts" />
       <recent name="E:\GitHub\Mentality\mentality_front\api" />
       <recent name="E:\GitHub\Mentality\mentality_front\pages" />
-      <recent name="E:\GitHub\Mentality\mentality_front\layouts" />
+      <recent name="E:\GitHub\Mentality\mentality_front\assets\img" />
       <recent name="E:\GitHub\Mentality\mentality_front\assets" />
     </key>
   </component>
@@ -63,6 +63,8 @@
       <workItem from="1614132091109" duration="11834000" />
       <workItem from="1614145379771" duration="2134000" />
       <workItem from="1614222280175" duration="4592000" />
+      <workItem from="1614231795521" duration="3305000" />
+      <workItem from="1614305866919" duration="7458000" />
     </task>
     <servers />
   </component>
@@ -78,22 +80,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="623" y="308" key="Github.ShareDialog/0.0.1536.834@0.0.1536.834" timestamp="1614047557818" />
-    <state width="1493" height="192" key="GridCell.Tab.0.bottom" timestamp="1614229971566">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom" timestamp="1614309243129">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1614229971566" />
-    <state width="1493" height="192" key="GridCell.Tab.0.center" timestamp="1614229971566">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1614309243129" />
+    <state width="1493" height="192" key="GridCell.Tab.0.center" timestamp="1614309243128">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1614229971566" />
-    <state width="1493" height="192" key="GridCell.Tab.0.left" timestamp="1614229971566">
+    <state width="1493" height="192" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1614309243128" />
+    <state width="1493" height="192" key="GridCell.Tab.0.left" timestamp="1614309243128">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1614229971566" />
-    <state width="1493" height="192" key="GridCell.Tab.0.right" timestamp="1614229971566">
+    <state width="1493" height="192" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1614309243128" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right" timestamp="1614309243128">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1614229971566" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1614309243128" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614144423277">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
