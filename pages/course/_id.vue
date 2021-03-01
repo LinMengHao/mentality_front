@@ -298,8 +298,8 @@
   // import collectApi from '@/api/collect'
   // //引入调用order.js文件
   // import orderApi from '@/api/order'
-  // //引入调用comment.js文件
-  // import commentApi from '@/api/comment'
+  //引入调用comment.js文件
+  import commentApi from '@/api/comment'
   //引入调用js-cookie
   import cookie from 'js-cookie'
   export default {
@@ -330,165 +330,165 @@
           courseId:'',
           nickname:'',
           avatar:'',
+          teacherId: ''
           },
       }
     },
-    //
-    // created() {
-    //   const token = cookie.get('MindSchool_token')
-    //   // 如果未登录，则isBought=false
-    //   // 如果已登录，则判断是否已购买
-    //   if (token) {
-    //     orderApi.isBought(this.courseWebVo.id).then(response => {
-    //       this.isBought = response.data.data.isBought
-    //     })
-    //     //判断是否收藏
-    //     collectApi.isCollect(this.courseWebVo.id).then(response => {
-    //       this.isCollect = response.data.data.isCollect
-    //     })
-    //   }
-    //
-    //   this.initComment()
-    // },
-    //
-    // methods: {
-    //   init(){
-    //     //判断是否登录
-    //     const token = cookie.get('MindSchool_token')
-    //     // 如果未登录，提示登录
-    //     if (token) {
-    //       this.createOrders()
-    //     }else{
-    //         this.$message({
-    //           type: 'error',
-    //           message: '请先登录️再进行下一步操作'
-    //         });
-    //         //vue路由跳转
-    //         this.$router.push({
-    //           path: '/login'
-    //         })
-    //     }
-    //   },
-    //
-    //   //生成订单
-    //   createOrders() {
-    //     orderApi.createOrders(this.$route.params.id)
-    //       .then(response => {
-    //         //获取返回订单号
-    //         //生成订单之后，跳转订单显示页面
-    //         this.$router.push({
-    //           path: '/order/' + response.data.data.orderId
-    //         })
-    //       })
-    //   },
-    //
-    //   init2(){
-    //     //判断是否登录
-    //     const token = cookie.get('MindSchool_token')
-    //     // 如果未登录，提示登录
-    //     if (token) {
-    //       this.addCollect()
-    //     }else{
-    //         this.$message({
-    //           type: 'error',
-    //           message: '请先登录️再进行下一步操作'
-    //         });
-    //         //vue路由跳转
-    //         this.$router.push({
-    //           path: '/login'
-    //         })
-    //     }
-    //   },
-    //
-    //   //收藏
-    //   addCollect(courseId) {
-    //     collectApi.addCollect(this.courseWebVo.id).then(response => {
-    //       this.isCollect = true
-    //       this.$message({
-    //         type: 'success',
-    //         message: '收藏成功'
-    //       })
-    //     })
-    //   },
-    //
-    //   //取消收藏
-    //   removeCollect(courseId) {
-    //     collectApi.removeCollectById(this.courseWebVo.id).then(response => {
-    //       this.isCollect = false
-    //       this.$message({
-    //         type: 'success',
-    //         message: '取消收藏成功'
-    //       })
-    //     })
-    //   },
-    //
-    //   //初始化评论,获取评论列表
-    //   initComment(){
-    //          commentApi.getPageList(this.page, this.limit, this.courseWebVo.id).then(response => {
-    //              this.data = response.data.data
-    //          })
-    //
-    //       },
-    //
-    //   init3(){
-    //     //判断是否登录
-    //     const token = cookie.get('MindSchool_token')
-    //     // 如果未登录，提示登录
-    //     if (token) {
-    //       this.addComment()
-    //     }else{
-    //         this.$message({
-    //           type: 'error',
-    //           message: '请先登录️再进行下一步操作'
-    //         });
-    //         //vue路由跳转
-    //         this.$router.push({
-    //           path: '/login'
-    //         })
-    //     }
-    //   },
-    //
-    //   //添加评论
-    //   addComment(){
-    //     this.comment.courseId = this.courseWebVo.id
-    //     this.comment.teacherId = this.courseWebVo.teacherId
-    //     commentApi.addComment(this.comment).then(response => {
-    //       if(response.data.success){
-    //         this.comment.content = ''
-    //         this.initComment()
-    //             }
-    //           })
-    //         },
-    //
-    //    //删除评论
-    //    deleteComment(commentId){
-    //      this.$confirm('确认要删除当前评论吗?', '提示', {
-    //        confirmButtonText: '确定',
-    //        cancelButtonText: '取消',
-    //        type: 'warning'
-    //      }).then(() => {
-    //        return commentApi.deleteComment(commentId)
-    //      }).then((response) => {
-    //        this.initComment()
-    //        this.$message({
-    //          type: 'success',
-    //          message: '删除成功✌',
-    //        })
-    //      }).catch(error => {
-    //        if (error === 'cancel') {
-    //          this.$message({
-    //            message: '取消删除'
-    //          })
-    //        }
-    //      })
-    //   },
-    //
-    //   //跳转页面
-    //   gotoPage(page){
-    //     commentApi.getPageList(page, this.limit,this.courseId).then(response => {
-    //       this.data = response.data.data
-    //         })
-    //       },
-    // },
+
+    created() {
+      const token = cookie.get('lmh_token');
+      // 如果未登录，则isBought=false
+      // 如果已登录，则判断是否已购买
+      // if (token) {
+      //   orderApi.isBought(this.courseWebVo.id).then(response => {
+      //     this.isBought = response.data.data.isBought
+      //   })
+      //   //判断是否收藏
+      //   collectApi.isCollect(this.courseWebVo.id).then(response => {
+      //     this.isCollect = response.data.data.isCollect
+      //   })
+      // }
+
+      this.initComment()
+    },
+
+    methods: {
+      // init(){
+      //   //判断是否登录
+      //   const token = cookie.get('MindSchool_token')
+      //   // 如果未登录，提示登录
+      //   if (token) {
+      //     this.createOrders()
+      //   }else{
+      //       this.$message({
+      //         type: 'error',
+      //         message: '请先登录️再进行下一步操作'
+      //       });
+      //       //vue路由跳转
+      //       this.$router.push({
+      //         path: '/login'
+      //       })
+      //   }
+      // },
+
+      // //生成订单
+      // createOrders() {
+      //   orderApi.createOrders(this.$route.params.id)
+      //     .then(response => {
+      //       //获取返回订单号
+      //       //生成订单之后，跳转订单显示页面
+      //       this.$router.push({
+      //         path: '/order/' + response.data.data.orderId
+      //       })
+      //     })
+      // },
+
+      // init2(){
+      //   //判断是否登录
+      //   const token = cookie.get('MindSchool_token')
+      //   // 如果未登录，提示登录
+      //   if (token) {
+      //     this.addCollect()
+      //   }else{
+      //       this.$message({
+      //         type: 'error',
+      //         message: '请先登录️再进行下一步操作'
+      //       });
+      //       //vue路由跳转
+      //       this.$router.push({
+      //         path: '/login'
+      //       })
+      //   }
+      // },
+      //
+      // //收藏
+      // addCollect(courseId) {
+      //   collectApi.addCollect(this.courseWebVo.id).then(response => {
+      //     this.isCollect = true
+      //     this.$message({
+      //       type: 'success',
+      //       message: '收藏成功'
+      //     })
+      //   })
+      // },
+      //
+      // //取消收藏
+      // removeCollect(courseId) {
+      //   collectApi.removeCollectById(this.courseWebVo.id).then(response => {
+      //     this.isCollect = false
+      //     this.$message({
+      //       type: 'success',
+      //       message: '取消收藏成功'
+      //     })
+      //   })
+      // },
+
+      //初始化评论,获取评论列表
+      initComment(){
+             commentApi.getPageList(this.page, this.limit, this.courseWebVo.id).then(response => {
+                 this.data = response.data.data
+             })
+          },
+
+      init3(){
+        //判断是否登录
+        const token = cookie.get('lmh_token');
+        // 如果未登录，提示登录
+        if (token) {
+          this.addComment()
+        }else{
+            this.$message({
+              type: 'error',
+              message: '请先登录️再进行下一步操作'
+            });
+            //vue路由跳转
+            this.$router.push({
+              path: '/login'
+            })
+        }
+      },
+
+      //添加评论
+      addComment(){
+        this.comment.courseId = this.courseWebVo.id;
+        this.comment.teacherId = this.courseWebVo.psychologistId;
+        commentApi.addComment(this.comment).then(response => {
+          if(response.data.success){
+            this.comment.content = '';
+            this.initComment()
+                }
+              })
+            },
+
+       //删除评论
+       deleteComment(commentId) {
+           this.$confirm('确认要删除当前评论吗?', '提示', {
+             confirmButtonText: '确定',
+             cancelButtonText: '取消',
+             type: 'warning'
+           }).then(() => {
+             return commentApi.deleteComment(commentId);
+           }).then((response) => {
+             this.initComment();
+             this.$message({
+               type: 'success',
+               message: '删除成功✌',
+             })
+           }).catch(error => {
+             if (error === 'cancel') {
+               this.$message({
+                 message: '取消删除'
+               })
+             }
+           })
+         },
+
+      //跳转页面
+      gotoPage(page){
+        commentApi.getPageList(page, this.limit,this.courseId).then(response => {
+          this.data = response.data.data
+            })
+          },
+    },
   }
 </script>
