@@ -294,10 +294,10 @@
 <script>
   //引入调用course.js文件
   import courseApi from '@/api/course'
-  // //引入调用collect.js文件
-  // import collectApi from '@/api/collect'
-  // //引入调用order.js文件
-  // import orderApi from '@/api/order'
+  //引入调用collect.js文件
+  import collectApi from '@/api/collect'
+  //引入调用order.js文件
+  import orderApi from '@/api/order'
   //引入调用comment.js文件
   import commentApi from '@/api/comment'
   //引入调用js-cookie
@@ -339,89 +339,89 @@
       const token = cookie.get('lmh_token');
       // 如果未登录，则isBought=false
       // 如果已登录，则判断是否已购买
-      // if (token) {
-      //   orderApi.isBought(this.courseWebVo.id).then(response => {
-      //     this.isBought = response.data.data.isBought
-      //   })
-      //   //判断是否收藏
-      //   collectApi.isCollect(this.courseWebVo.id).then(response => {
-      //     this.isCollect = response.data.data.isCollect
-      //   })
-      // }
+      if (token) {
+        orderApi.isBought(this.courseWebVo.id).then(response => {
+          this.isBought = response.data.data.isBought
+        })
+        //判断是否收藏
+        collectApi.isCollect(this.courseWebVo.id).then(response => {
+          this.isCollect = response.data.data.isCollect
+        })
+      }
 
       this.initComment()
     },
 
     methods: {
-      // init(){
-      //   //判断是否登录
-      //   const token = cookie.get('MindSchool_token')
-      //   // 如果未登录，提示登录
-      //   if (token) {
-      //     this.createOrders()
-      //   }else{
-      //       this.$message({
-      //         type: 'error',
-      //         message: '请先登录️再进行下一步操作'
-      //       });
-      //       //vue路由跳转
-      //       this.$router.push({
-      //         path: '/login'
-      //       })
-      //   }
-      // },
+      init(){
+        //判断是否登录
+        const token = cookie.get('lmh_token');
+        // 如果未登录，提示登录
+        if (token) {
+          this.createOrders()
+        }else{
+            this.$message({
+              type: 'error',
+              message: '请先登录️再进行下一步操作'
+            });
+            //vue路由跳转
+            this.$router.push({
+              path: '/login'
+            })
+        }
+      },
 
-      // //生成订单
-      // createOrders() {
-      //   orderApi.createOrders(this.$route.params.id)
-      //     .then(response => {
-      //       //获取返回订单号
-      //       //生成订单之后，跳转订单显示页面
-      //       this.$router.push({
-      //         path: '/order/' + response.data.data.orderId
-      //       })
-      //     })
-      // },
+      //生成订单
+      createOrders() {
+        orderApi.createOrders(this.$route.params.id)
+          .then(response => {
+            //获取返回订单号
+            //生成订单之后，跳转订单显示页面
+            this.$router.push({
+              path: '/order/' + response.data.data.orderId
+            })
+          })
+      },
 
-      // init2(){
-      //   //判断是否登录
-      //   const token = cookie.get('MindSchool_token')
-      //   // 如果未登录，提示登录
-      //   if (token) {
-      //     this.addCollect()
-      //   }else{
-      //       this.$message({
-      //         type: 'error',
-      //         message: '请先登录️再进行下一步操作'
-      //       });
-      //       //vue路由跳转
-      //       this.$router.push({
-      //         path: '/login'
-      //       })
-      //   }
-      // },
-      //
-      // //收藏
-      // addCollect(courseId) {
-      //   collectApi.addCollect(this.courseWebVo.id).then(response => {
-      //     this.isCollect = true
-      //     this.$message({
-      //       type: 'success',
-      //       message: '收藏成功'
-      //     })
-      //   })
-      // },
-      //
-      // //取消收藏
-      // removeCollect(courseId) {
-      //   collectApi.removeCollectById(this.courseWebVo.id).then(response => {
-      //     this.isCollect = false
-      //     this.$message({
-      //       type: 'success',
-      //       message: '取消收藏成功'
-      //     })
-      //   })
-      // },
+      init2(){
+        //判断是否登录
+        const token = cookie.get('lmh_token')
+        // 如果未登录，提示登录
+        if (token) {
+          this.addCollect()
+        }else{
+            this.$message({
+              type: 'error',
+              message: '请先登录️再进行下一步操作'
+            });
+            //vue路由跳转
+            this.$router.push({
+              path: '/login'
+            })
+        }
+      },
+
+      //收藏
+      addCollect(courseId) {
+        collectApi.addCollect(this.courseWebVo.id).then(response => {
+          this.isCollect = true
+          this.$message({
+            type: 'success',
+            message: '收藏成功'
+          })
+        })
+      },
+
+      //取消收藏
+      removeCollect(courseId) {
+        collectApi.removeCollectById(this.courseWebVo.id).then(response => {
+          this.isCollect = false
+          this.$message({
+            type: 'success',
+            message: '取消收藏成功'
+          })
+        })
+      },
 
       //初始化评论,获取评论列表
       initComment(){

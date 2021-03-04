@@ -17,7 +17,7 @@
               <a>课程</a>
             </router-link>
             <router-link to="/teacher" tag="li" active-class="current">
-              <a>名师</a>
+              <a>心理名师</a>
             </router-link>
             <router-link to="/practice" tag="li" active-class="current">
               <a>练习</a>

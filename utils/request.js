@@ -20,7 +20,8 @@ service.interceptors.request.use(
   },
   err => {
     return Promise.reject(err);
-  })
+  });
+// response interceptor
 
 // // http response 拦截器
 // service.interceptors.response.use(
@@ -48,4 +49,47 @@ service.interceptors.request.use(
 //   error => {
 //     return Promise.reject(error.response) // 返回接口返回的错误信息
 //   });
+service.interceptors.response.use(
+  /**
+   * If you want to get http information such as headers or status
+   * Please return  response => response
+   */
+
+  /**
+   * Determine the request status by custom code
+   * Here is just an example
+   * You can also judge the status by HTTP Status Code
+   */
+  response => {
+    const res = response
+
+    // if the custom code is not 200, it is judged as an error.
+    //如果返回状态码不是200，则报错
+    if (res.data.code !== 200) {
+      Message({
+        message: res.data.message || 'Error',
+        type: 'error',
+        duration: 5 * 1000
+      })
+
+      // // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
+      // if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      //   // to re-login
+      //   MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
+      //     confirmButtonText: 'Re-Login',
+      //     cancelButtonText: 'Cancel',
+      //     type: 'warning'
+      //   }).then(() => {
+      //     store.dispatch('user/resetToken').then(() => {
+      //       location.reload()
+      //     })
+      //   })
+      // }
+      return Promise.reject(new Error(res.data.message || 'Error'))
+    } else {
+      return res
+    }
+  },
+
+)
 export default service
