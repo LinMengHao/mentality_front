@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\webStorm\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -80,7 +80,9 @@
       <workItem from="1614667685610" duration="7951000" />
       <workItem from="1614737554885" duration="37000" />
       <workItem from="1614761023271" duration="2697000" />
-      <workItem from="1614823223716" duration="5355000" />
+      <workItem from="1614823223716" duration="5954000" />
+      <workItem from="1614865348029" duration="38000" />
+      <workItem from="1614911906160" duration="632000" />
     </task>
     <servers />
   </component>
@@ -88,30 +90,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1614763659062">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1614865383389">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1614763659062" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1614865383389" />
     <state x="623" y="308" key="Github.ShareDialog" timestamp="1614047557818">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="623" y="308" key="Github.ShareDialog/0.0.1536.834@0.0.1536.834" timestamp="1614047557818" />
-    <state width="1493" height="192" key="GridCell.Tab.0.bottom" timestamp="1614838650979">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom" timestamp="1614862142823">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1614838650979" />
-    <state width="1493" height="192" key="GridCell.Tab.0.center" timestamp="1614838650979">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1614862142823" />
+    <state width="1493" height="192" key="GridCell.Tab.0.center" timestamp="1614862142822">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1614838650979" />
-    <state width="1493" height="192" key="GridCell.Tab.0.left" timestamp="1614838650979">
+    <state width="1493" height="192" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1614862142822" />
+    <state width="1493" height="192" key="GridCell.Tab.0.left" timestamp="1614862142822">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1614838650979" />
-    <state width="1493" height="192" key="GridCell.Tab.0.right" timestamp="1614838650979">
+    <state width="1493" height="192" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1614862142822" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right" timestamp="1614862142823">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="192" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1614838650979" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1614862142823" />
     <state x="444" y="271" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1614691785838">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
